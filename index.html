@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Dinar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(
+                -45deg,
+                #0f172a,
+                #1e3a8a,
+                #2563eb,
+                #1e40af,
+                #3b82f6,
+                #60a5fa,
+                #93c5fd,
+                #ef4444,
+                #f97316,
+                #84cc16,
+                #06b6d4,
+                #8b5cf6
+            );
+            background-size: 400% 400%;
+            animation: gradientAnimation 8s ease infinite;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            max-width: 90%;
+            width: 400px;
+        }
+
+        .store-link {
+            display: inline-block;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .app-title {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        #appicon {
+            width: 200px;
+            height: 200px;
+            border-radius: 45px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s ease;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        #appicon:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        #appstore {
+            width: 160px;
+            height: 48px;
+            transition: all 0.3s ease;
+        }
+
+        #appstore:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        .click-here {
+            color: white;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .click-here:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .click-here::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .click-here:hover::before {
+            left: 100%;
+        }
+
+        .description {
+            color: white;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 300px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="app-title">Change Dinar</h1>
+        
+        <p class="description">
+           تطبيق تغيير الدينار هو تطبيق يساعدك على تحويل العملات بسهولة وسرعة 
+        </p>
+
+        <a href="https://apps.apple.com/us/app/change-dinar/id6742030993" class="store-link">
+            <img src="appicon.png" alt="Change Dinar App Icon" id="appicon">
+        </a>
+        
+        <a href="https://apps.apple.com/us/app/change-dinar/id6742030993" class="store-link click-here">
+          انقر هنا لي تحميل تطبيق
+        </a>
+
+        <a href="https://apps.apple.com/us/app/change-dinar/id6742030993" class="store-link">
+            <img src="appstore.png" alt="Download on App Store" id="appstore">
+        </a>
+    </div>
+</body>
+</html>
